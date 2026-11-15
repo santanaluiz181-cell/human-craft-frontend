@@ -48,7 +48,7 @@
     <!-- Hero Editorial -->
     <section id="topo" class="hero-spread" aria-labelledby="hero-titulo">
       <aside class="hero-margin" aria-label="Mascote e nota de margem">
-        <div id="hero-mascot" class="vignette-frame"></div>
+        <div id="hero-mascot" class="vignette-frame" data-mascot-state="gate-1"></div>
         <p class="hand-note">nota: código só depois do Gate 3.</p>
         <p class="hand-note hand-note--red">sem gradiente roxo!</p>
       </aside>
@@ -81,37 +81,32 @@
       </div>
     </section>
 
-    <!-- Os 5 Gates Interativos -->
+    <!-- Os 5 Gates em Cards Vivos -->
     <section id="gates" class="section-block" aria-labelledby="gates-titulo">
       <div class="section-header">
         <h2 id="gates-titulo" class="section-title">Caderno de Campo: Os 5 Gates</h2>
-        <span class="section-meta">pág. 02 a 06 · clique nas abas</span>
+        <span class="section-meta">pág. 02 a 06 · clique no lápis para reagir</span>
       </div>
 
-      <div class="gate-tabs" role="tablist" aria-label="Etapas obrigatórias da skill">
-        <button id="tab-g1" class="gate-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-g1" tabindex="0" data-gate-state="gate-1">01. Sentimento</button>
-        <button id="tab-g2" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g2" tabindex="-1" data-gate-state="gate-2">02. Moodboard</button>
-        <button id="tab-g3" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g3" tabindex="-1" data-gate-state="gate-3">03. Rascunho</button>
-        <button id="tab-g4" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g4" tabindex="-1" data-gate-state="gate-4">04. Assets</button>
-        <button id="tab-g5" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g5" tabindex="-1" data-gate-state="gate-5">05. Auditoria</button>
-      </div>
-
-      <div class="ruled-sheet">
-        <div>
-          <!-- Gate 1 -->
-          <div id="panel-g1" class="gate-panel" role="tabpanel" aria-labelledby="tab-g1">
+      <div class="gates-deck">
+        <!-- Gate 1 -->
+        <article class="gate-card">
+          <div class="gate-card-mascot">
+            <div class="vignette-frame" data-mascot-state="gate-1" title="Clique para animar o Lápis"></div>
+            <p class="gate-card-speech">"Calma! Antes do primeiro div, qual é a temperatura desse papel?"</p>
+          </div>
+          <div class="gate-card-body">
             <span class="gate-badge">Gate 1 · STOP AND ASK</span>
-            <h3 class="gate-heading"><span class="hand-underline">Sentimento e Opinião</span> antes do código</h3>
+            <h3 class="gate-heading"><span class="hand-underline">Sentimento e Opinião</span></h3>
             <p>O agente para tudo e faz 4 perguntas secas para impedir o padrão genérico de SaaS:</p>
             <ul class="gate-list">
               <li><strong>Emoção em 3 adjetivos:</strong> ex. humano, manual, rasurado.</li>
-              <li><strong>Superfície e material:</strong> papel creme, nanquim, jornal, vidro fosco.</li>
-              <li><strong>Paleta travada:</strong> no máximo 2 neutros e 1 cor de destaque intencional.</li>
-              <li><strong>Tipografia com caráter:</strong> serif editorial para leitura e manuscrito nas margens.</li>
+              <li><strong>Superfície:</strong> papel creme, nanquim, jornal ou vidro fosco.</li>
+              <li><strong>Paleta travada:</strong> máximo 2 neutros e 1 cor de destaque.</li>
+              <li><strong>Tipografia:</strong> serif editorial + manuscrito nas margens.</li>
             </ul>
-
             <div class="gate-interactive-box">
-              <p class="gate-interactive-title">Teste de direção (clique para montar o DESIGN_SPEC):</p>
+              <p class="gate-interactive-title">Monte seu DESIGN_SPEC:</p>
               <div class="chip-row">
                 <button class="mood-chip" type="button" aria-pressed="true" data-spec="Papel #F2EBDD">Papel #F2EBDD</button>
                 <button class="mood-chip" type="button" aria-pressed="true" data-spec="Grafite #292821">Grafite #292821</button>
@@ -123,61 +118,80 @@
               </div>
             </div>
           </div>
+        </article>
 
-          <!-- Gate 2 -->
-          <div id="panel-g2" class="gate-panel" role="tabpanel" aria-labelledby="tab-g2" hidden>
+        <!-- Gate 2 -->
+        <article class="gate-card">
+          <div class="gate-card-mascot">
+            <div class="vignette-frame" data-mascot-state="gate-2" title="Clique para animar o Lápis"></div>
+            <p class="gate-card-speech">"Vamos garimpar 2 ou 3 referências reais antes de abrir o editor."</p>
+          </div>
+          <div class="gate-card-body">
             <span class="gate-badge">Gate 2 · STOP AND WAIT</span>
-            <h3 class="gate-heading"><span class="hand-underline">Caça real de referências</span></h3>
+            <h3 class="gate-heading"><span class="hand-underline">Caça de Referências</span></h3>
             <p>Antes de pedir código, você traz 2 ou 3 referências visuais concretas de acervos reais:</p>
             <ul class="gate-list">
-              <li><strong>Mood e texturas físicas:</strong> <code>are.na</code>, <code>cosmos.so</code>, <code>savee.it</code>.</li>
-              <li><strong>Tipografia e personalidade:</strong> <code>godly.website</code>, <code>siteinspire.com</code>, <code>curated.design</code>.</li>
-              <li><strong>Fluxos e UX limpa:</strong> <code>mobbin.com</code>, <code>refero.design</code>.</li>
-              <li><strong>Micro-interações de desenho:</strong> <code>tympanus.net/codrops</code>, <code>lottiefiles.com</code>.</li>
+              <li><strong>Mood e texturas:</strong> <code>are.na</code>, <code>cosmos.so</code>, <code>savee.it</code>.</li>
+              <li><strong>Editorial:</strong> <code>godly.website</code>, <code>siteinspire.com</code>.</li>
+              <li><strong>Fluxos UX:</strong> <code>mobbin.com</code>, <code>refero.design</code>.</li>
+              <li><strong>Movimento:</strong> <code>tympanus.net/codrops</code>, <code>lottiefiles.com</code>.</li>
             </ul>
-            <p>O agente extrai tokens exatos (cores hex, ritmo de espaçamento, curvas de easing) para o <code>DESIGN_SPEC</code>.</p>
+            <p>O agente extrai tokens exatos (hex, ritmo, easing) para o <code>DESIGN_SPEC</code>.</p>
           </div>
+        </article>
 
-          <!-- Gate 3 -->
-          <div id="panel-g3" class="gate-panel" role="tabpanel" aria-labelledby="tab-g3" hidden>
+        <!-- Gate 3 -->
+        <article class="gate-card">
+          <div class="gate-card-mascot">
+            <div class="vignette-frame" data-mascot-state="gate-3" title="Clique para animar o Lápis"></div>
+            <p class="gate-card-speech">"Rascunho na mão primeiro. Só depois a gente escreve HTML e CSS."</p>
+          </div>
+          <div class="gate-card-body">
             <span class="gate-badge">Gate 3 · STOP AND CONFIRM</span>
-            <h3 class="gate-heading"><span class="hand-underline">Esboço na mão</span> ou mapa ASCII</h3>
-            <p>Você envia a foto de um rascunho feito no caderno ou aprova um mapa estrutural em ASCII adaptado ao Gate 1 e 2.</p>
+            <h3 class="gate-heading"><span class="hand-underline">Esboço na Mão</span></h3>
+            <p>Você envia a foto de um rascunho no papel ou aprova um mapa estrutural em ASCII adaptado ao Gate 1 e 2.</p>
             <ul class="gate-list">
-              <li>Nenhuma pasta <code>src/</code> ou arquivo HTML nasce antes do seu "OK".</li>
-              <li>Define tensão de layout, proporção de margens e hierarquia real do conteúdo.</li>
-              <li>Evita seções vazias ou preenchimento de template que ninguém pediu.</li>
+              <li>Nenhum arquivo HTML/CSS/React nasce antes do seu "OK".</li>
+              <li>Define tensão de layout, margens e hierarquia real.</li>
+              <li>Corta seções vazias de template que ninguém pediu.</li>
             </ul>
           </div>
+        </article>
 
-          <!-- Gate 4 -->
-          <div id="panel-g4" class="gate-panel" role="tabpanel" aria-labelledby="tab-g4" hidden>
+        <!-- Gate 4 -->
+        <article class="gate-card">
+          <div class="gate-card-mascot">
+            <div class="vignette-frame" data-mascot-state="gate-4" title="Clique para animar o Lápis"></div>
+            <p class="gate-card-speech">"Ícone genérico não entra. Aqui vai aquarela p5.brush e Lottie vivo!"</p>
+          </div>
+          <div class="gate-card-body">
             <span class="gate-badge">Gate 4 · BESPOKE ASSETS</span>
-            <h3 class="gate-heading"><span class="hand-underline">Aquarela p5.brush</span> e Lottie vivo</h3>
-            <p>Quando o projeto pede arte orgânica ou movimento vetorial, ícones genéricos ficam de fora:</p>
+            <h3 class="gate-heading"><span class="hand-underline">Aquarela e Lottie</span></h3>
+            <p>Quando o projeto pede arte orgânica ou movimento vetorial, ícones prontos ficam de fora:</p>
             <ul class="gate-list">
-              <li><strong>Arte orgânica e papel:</strong> invoca <code>watercolor-obj</code> ou <code>watercolor-obj-p5</code> (<code>morikyl/skills</code>).</li>
-              <li><strong>Animação vetorial:</strong> usa <code>@lottiefiles/creator-mcp</code> para gerar e editar Lottie JSON em tempo real.</li>
-              <li><strong>Nanquim autoral:</strong> ilustrações em traço irregular com personalidade própria.</li>
+              <li><strong>Arte orgânica:</strong> invoca <code>watercolor-obj</code> ou <code>watercolor-obj-p5</code> (<code>morikyl/skills</code>).</li>
+              <li><strong>Movimento vetorial:</strong> usa <code>@lottiefiles/creator-mcp</code> para editar Lottie JSON ao vivo.</li>
+              <li><strong>Nanquim autoral:</strong> ilustrações e micro-animações com personalidade.</li>
             </ul>
           </div>
+        </article>
 
-          <!-- Gate 5 -->
-          <div id="panel-g5" class="gate-panel" role="tabpanel" aria-labelledby="tab-g5" hidden>
+        <!-- Gate 5 -->
+        <article class="gate-card gate-card--wide">
+          <div class="gate-card-mascot">
+            <div class="vignette-frame" data-mascot-state="gate-5" title="Clique para animar o Lápis"></div>
+            <p class="gate-card-speech">"Gradiente roxo e card idêntico? Risca em vermelho e lapida de verdade."</p>
+          </div>
+          <div class="gate-card-body">
             <span class="gate-badge">Gate 5 · ANTI-SLOP AUDIT</span>
-            <h3 class="gate-heading"><span class="hand-underline">Iteração intencional</span> e rasura</h3>
-            <p>O primeiro rascunho nunca é o final. O agente executa duas checagens explícitas após renderizar:</p>
+            <h3 class="gate-heading"><span class="hand-underline">Iteração Intencional e Rasura</span></h3>
+            <p>O primeiro rascunho nunca é o final. O agente executa duas checagens explícitas após renderizar no navegador:</p>
             <ul class="gate-list">
-              <li><strong>Tipografia e movimento:</strong> contraste WCAG AA, easing não-linear e foco visível no teclado.</li>
+              <li><strong>Tipografia e movimento:</strong> contraste WCAG AA verificado, easing não-linear e navegação completa via teclado.</li>
               <li><strong>Auditoria Anti-Slop:</strong> risca gradientes roxos genéricos, grids de cards idênticos, estatísticas inventadas e botões mortos.</li>
             </ul>
           </div>
-        </div>
-
-        <aside class="mascot-stage" aria-label="Reação do mascote Lápis">
-          <div id="stage-mascot" class="vignette-frame"></div>
-          <p class="mascot-speech" data-mascot-speech>"Calma. Antes do primeiro div, qual é a temperatura desse papel?"</p>
-        </aside>
+        </article>
       </div>
     </section>
 

@@ -401,46 +401,14 @@ button:disabled {
   color: var(--rasura);
 }
 
-/* Abas de caderno */
-.gate-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: -1px;
-  position: relative;
-  z-index: 2;
+/* Deck dos 5 Gates (cards de caderno visíveis com lápis vivo em cada um) */
+.gates-deck {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
-.gate-tab {
-  background: var(--paper-soft);
-  border: 1px solid var(--aged);
-  border-bottom: 1px solid var(--aged);
-  color: var(--graphite-muted);
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  padding: 0.65rem 1rem;
-  min-height: 44px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  transition: background-color 0.18s ease, color 0.18s ease;
-}
-
-.gate-tab:hover {
-  color: var(--graphite);
-  background: var(--paper);
-}
-
-.gate-tab[aria-selected="true"] {
-  background: var(--paper);
-  color: var(--graphite);
-  border-color: var(--graphite);
-  border-bottom-color: var(--paper);
-  font-weight: 600;
-}
-
-/* Folha pautada do Gate ativo */
-.ruled-sheet {
+.gate-card {
   border: 1.5px solid var(--graphite);
   background-color: var(--paper);
   background-image: repeating-linear-gradient(
@@ -450,22 +418,58 @@ button:disabled {
     rgba(216, 203, 179, 0.42) 31px,
     rgba(216, 203, 179, 0.42) 32px
   );
-  padding: 2rem;
+  padding: 1.5rem;
   display: grid;
-  grid-template-columns: 1.35fr 0.85fr;
-  gap: 2rem;
+  grid-template-columns: 165px 1fr;
+  gap: 1.25rem;
   align-items: start;
+  min-width: 0;
+  transition: transform 0.22s var(--ease-ink), box-shadow 0.22s var(--ease-ink);
 }
 
-.ruled-sheet > div,
+.gate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0 var(--aged);
+}
+
+.gate-card--wide {
+  grid-column: 1 / -1;
+  grid-template-columns: 185px 1fr;
+}
+
+.gate-card-mascot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.55rem;
+  background: rgba(237, 228, 209, 0.65);
+  border: 1px solid var(--aged);
+  padding: 0.9rem 0.65rem;
+}
+
+.gate-card-mascot .vignette-frame {
+  width: 142px;
+  height: 142px;
+  cursor: pointer;
+}
+
+.gate-card-speech {
+  font-family: var(--font-hand);
+  font-size: 1.18rem;
+  line-height: 1.2;
+  color: var(--graphite);
+  margin: 0;
+}
+
+.gate-card-body {
+  min-width: 0;
+}
+
 .mascot-stage,
 .compare-card,
 .install-card {
   min-width: 0;
-}
-
-.gate-panel[hidden] {
-  display: none;
 }
 
 .gate-badge {
@@ -730,7 +734,150 @@ button:disabled {
   }
 }
 
+/* Animações orgânicas do Mascote Lápis (respiração, piscada, braços vivos) */
+.pencil-breathe {
+  transform-box: fill-box;
+  transform-origin: center 75%;
+  animation: pencilBreathe 3.2s ease-in-out var(--breath-delay, 0s) infinite;
+}
+
+.pencil-eyes {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: pencilBlink 4.6s ease-in-out var(--breath-delay, 0s) infinite;
+}
+
+.pencil-prop-float {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: propFloat 2.8s ease-in-out var(--breath-delay, 0s) infinite;
+}
+
+.pencil-arm-left,
+.pencil-arm-right {
+  transform-box: fill-box;
+  transform-origin: center top;
+}
+
+.arm-anim-think {
+  animation: armThink 2.4s ease-in-out infinite;
+}
+
+.arm-anim-sway {
+  animation: armSway 3.1s ease-in-out infinite;
+}
+
+.arm-anim-search {
+  transform-origin: 16px -4px;
+  animation: armSearch 2.8s ease-in-out infinite;
+}
+
+.arm-anim-sketch {
+  transform-origin: -16px 4px;
+  animation: armSketch 1.3s ease-in-out infinite;
+}
+
+.arm-anim-wave {
+  transform-origin: -16px 0px;
+  animation: armWave 1.9s ease-in-out infinite;
+}
+
+.arm-anim-paint {
+  transform-origin: 16px 4px;
+  animation: armPaint 2.2s ease-in-out infinite;
+}
+
+.arm-anim-slash {
+  transform-origin: -16px 0px;
+  animation: armSlash 1.8s var(--ease-ink) infinite;
+}
+
+.vignette-frame.is-excited svg {
+  animation: excitedBounce 0.55s var(--ease-ink);
+}
+
+@keyframes pencilBreathe {
+  0%, 100% {
+    transform: translateY(0) scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: translateY(-2.4px) scaleY(1.016) scaleX(0.992);
+  }
+}
+
+@keyframes pencilBlink {
+  0%, 44%, 48%, 94%, 100% {
+    transform: scaleY(1);
+  }
+  46%, 96% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes propFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+}
+
+@keyframes armThink {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-6deg) translateY(-1.5px); }
+}
+
+@keyframes armSway {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes armSearch {
+  0%, 100% { transform: rotate(0deg) translate(0, 0); }
+  50% { transform: rotate(-10deg) translate(-2px, 2px); }
+}
+
+@keyframes armSketch {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg) translateX(2px); }
+  75% { transform: rotate(8deg) translateX(-2px); }
+}
+
+@keyframes armWave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-14deg); }
+}
+
+@keyframes armPaint {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(12deg) translateY(-2px); }
+}
+
+@keyframes armSlash {
+  0%, 70%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-16deg) translateY(-2px); }
+  45% { transform: rotate(10deg) translateY(2px); }
+}
+
+@keyframes excitedBounce {
+  0% { transform: scale(1) rotate(0deg); }
+  35% { transform: scale(1.08) rotate(-4deg); }
+  70% { transform: scale(0.97) rotate(3deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
 /* Responsividade Mobile */
+@media (max-width: 960px) {
+  .gates-deck {
+    grid-template-columns: 1fr;
+  }
+
+  .gate-card--wide {
+    grid-template-columns: 165px 1fr;
+  }
+}
+
 @media (max-width: 860px) {
   .hero-spread {
     grid-template-columns: 1fr;
@@ -745,7 +892,8 @@ button:disabled {
     padding-top: 1.5rem;
   }
 
-  .ruled-sheet {
+  .gate-card,
+  .gate-card--wide {
     grid-template-columns: 1fr;
     padding: 1.25rem;
   }
@@ -767,6 +915,14 @@ button:disabled {
   .strike-path {
     animation: none;
     stroke-dashoffset: 0;
+  }
+
+  .pencil-breathe,
+  .pencil-eyes,
+  .pencil-prop-float,
+  .pencil-arm-left,
+  .pencil-arm-right {
+    animation: none;
   }
 
   .pencil-follower {

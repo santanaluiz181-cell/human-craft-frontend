@@ -1,57 +1,12 @@
 (function () {
   "use strict";
 
-  const heroMascotEl = document.getElementById("hero-mascot");
-  const stageMascotEl = document.getElementById("stage-mascot");
-
   if (window.PencilMascot) {
-    window.PencilMascot.render(heroMascotEl, "gate-1");
-    window.PencilMascot.render(stageMascotEl, "gate-1");
+    window.PencilMascot.renderAll();
     window.PencilMascot.initEyeTracking();
   }
 
-  // 1. Navegação por abas dos 5 Gates (com suporte completo a teclado)
-  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-  const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
-
-  function activateTab(tab) {
-    const targetId = tab.getAttribute("aria-controls");
-    const gateState = tab.getAttribute("data-gate-state") || "gate-1";
-
-    tabs.forEach((t) => {
-      const isSelected = t === tab;
-      t.setAttribute("aria-selected", String(isSelected));
-      t.setAttribute("tabindex", isSelected ? "0" : "-1");
-    });
-
-    panels.forEach((p) => {
-      p.hidden = p.id !== targetId;
-    });
-
-    if (window.PencilMascot && stageMascotEl) {
-      window.PencilMascot.render(stageMascotEl, gateState);
-    }
-  }
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activateTab(tab));
-
-    tab.addEventListener("keydown", (e) => {
-      let nextIndex = null;
-      if (e.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
-      if (e.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
-      if (e.key === "Home") nextIndex = 0;
-      if (e.key === "End") nextIndex = tabs.length - 1;
-
-      if (nextIndex !== null) {
-        e.preventDefault();
-        tabs[nextIndex].focus();
-        activateTab(tabs[nextIndex]);
-      }
-    });
-  });
-
-  // 2. Simulador interativo do Gate 1 (chips de sentimento atualizam DESIGN_SPEC)
+  // 1. Simulador interativo do Gate 1 (chips de sentimento atualizam DESIGN_SPEC)
   const moodChips = Array.from(document.querySelectorAll(".mood-chip"));
   const specPreview = document.getElementById("spec-preview");
 
@@ -74,7 +29,7 @@
     });
   });
 
-  // 3. Botão de rasura no comparativo Antes vs Depois
+  // 2. Botão de rasura no comparativo Antes vs Depois
   const strikeBtn = document.getElementById("strike-slop-btn");
   const slopCard = document.getElementById("slop-card");
 
@@ -86,7 +41,7 @@
     });
   }
 
-  // 4. Botões de cópia para comandos CLI e JSON
+  // 3. Botões de cópia para comandos CLI e JSON
   const copyButtons = Array.from(document.querySelectorAll("[data-copy-target]"));
 
   copyButtons.forEach((btn) => {
@@ -116,7 +71,7 @@
     });
   });
 
-  // 5. Ponteiro lápis discreto (desktop apenas, com toggle de preferência)
+  // 4. Ponteiro lápis discreto (desktop apenas, com toggle de preferência)
   const follower = document.getElementById("pencil-follower");
   const cursorToggleBtn = document.getElementById("cursor-toggle-btn");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
