@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>human-craft-frontend | Skill de Frontend Autoral</title>
+  <link rel="icon" type="image/svg+xml" href="assets/pencil-mascot.svg">
+  <meta name="description" content="Skill para agentes de código que trava a geração prematura de UI e exige sentimento, moodboard real, rascunho na mão e auditoria anti-slop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/notebook.css">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div class="paper-grain" aria-hidden="true"></div>
+
+  <!-- Ponteiro lápis discreto (desktop apenas) -->
+  <div id="pencil-follower" class="pencil-follower" aria-hidden="true">
+    <svg viewBox="0 0 32 32" width="28" height="28">
+      <g transform="translate(4, 2) rotate(32)">
+        <rect x="6" y="0" width="7" height="4" fill="#A64B3C" stroke="#292821" stroke-width="1.4"/>
+        <rect x="6" y="4" width="7" height="3" fill="#D8CBB3" stroke="#292821" stroke-width="1.4"/>
+        <rect x="6" y="7" width="7" height="14" fill="#68765B" stroke="#292821" stroke-width="1.4"/>
+        <polygon points="6,21 13,21 9.5,28" fill="#D8CBB3" stroke="#292821" stroke-width="1.4"/>
+        <polygon points="8.2,25 10.8,25 9.5,28" fill="#292821"/>
+      </g>
+    </svg>
+  </div>
+
+  <header class="site-header">
+    <div class="notebook-shell header-inner">
+      <a class="brand-mark" href="#topo">
+        <span class="brand-stamp">caderno 01</span>
+        <span>human-craft-frontend</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a class="nav-link" href="#gates">Os 5 Gates</a>
+        <a class="nav-link" href="#comparativo">Antes e Depois</a>
+        <a class="nav-link" href="#instalacao">Instalação</a>
+        <button id="cursor-toggle-btn" class="cursor-toggle-btn" type="button" aria-pressed="true">Ponteiro: Lápis</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="notebook-shell">
+    <!-- Hero Editorial -->
+    <section id="topo" class="hero-spread" aria-labelledby="hero-titulo">
+      <aside class="hero-margin" aria-label="Mascote e nota de margem">
+        <div id="hero-mascot" class="vignette-frame"></div>
+        <p class="hand-note">nota: código só depois do Gate 3.</p>
+        <p class="hand-note hand-note--red">sem gradiente roxo!</p>
+      </aside>
+
+      <div class="hero-content">
+        <p class="kicker-hand">rascunho de projeto · protocolo anti-slop</p>
+        <h1 id="hero-titulo" class="hero-title">
+          Interfaces pensadas por
+          <span class="strike-wrap">
+            <span class="strike-word">algoritmos</span>
+            <span class="correction-above">humanos</span>
+            <svg class="strike-svg" viewBox="0 0 220 18" preserveAspectRatio="none" aria-hidden="true">
+              <path class="strike-path" d="M3 10 Q72 4 145 12 T217 7" />
+            </svg>
+          </span>
+          com lápis na mão.
+        </h1>
+
+        <p class="hero-lead">
+          Uma skill aberta para agentes de código que proíbe HTML, CSS ou React antes de você definir sentimento, moodboard real e um rascunho estrutural aprovado.
+        </p>
+
+        <div class="hero-actions">
+          <div class="cli-box">
+            <code id="cli-install-main" class="cli-code">npx skills add santanaluiz181-cell/human-craft-frontend</code>
+            <button class="btn-ink" type="button" data-copy-target="cli-install-main">Copiar</button>
+          </div>
+          <a class="btn-outline" href="https://github.com/santanaluiz181-cell/human-craft-frontend" target="_blank" rel="noopener noreferrer">Ver no GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os 5 Gates Interativos -->
+    <section id="gates" class="section-block" aria-labelledby="gates-titulo">
+      <div class="section-header">
+        <h2 id="gates-titulo" class="section-title">Caderno de Campo: Os 5 Gates</h2>
+        <span class="section-meta">pág. 02 a 06 · clique nas abas</span>
+      </div>
+
+      <div class="gate-tabs" role="tablist" aria-label="Etapas obrigatórias da skill">
+        <button id="tab-g1" class="gate-tab" type="button" role="tab" aria-selected="true" aria-controls="panel-g1" tabindex="0" data-gate-state="gate-1">01. Sentimento</button>
+        <button id="tab-g2" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g2" tabindex="-1" data-gate-state="gate-2">02. Moodboard</button>
+        <button id="tab-g3" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g3" tabindex="-1" data-gate-state="gate-3">03. Rascunho</button>
+        <button id="tab-g4" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g4" tabindex="-1" data-gate-state="gate-4">04. Assets</button>
+        <button id="tab-g5" class="gate-tab" type="button" role="tab" aria-selected="false" aria-controls="panel-g5" tabindex="-1" data-gate-state="gate-5">05. Auditoria</button>
+      </div>
+
+      <div class="ruled-sheet">
+        <div>
+          <!-- Gate 1 -->
+          <div id="panel-g1" class="gate-panel" role="tabpanel" aria-labelledby="tab-g1">
+            <span class="gate-badge">Gate 1 · STOP AND ASK</span>
+            <h3 class="gate-heading"><span class="hand-underline">Sentimento e Opinião</span> antes do código</h3>
+            <p>O agente para tudo e faz 4 perguntas secas para impedir o padrão genérico de SaaS:</p>
+            <ul class="gate-list">
+              <li><strong>Emoção em 3 adjetivos:</strong> ex. humano, manual, rasurado.</li>
+              <li><strong>Superfície e material:</strong> papel creme, nanquim, jornal, vidro fosco.</li>
+              <li><strong>Paleta travada:</strong> no máximo 2 neutros e 1 cor de destaque intencional.</li>
+              <li><strong>Tipografia com caráter:</strong> serif editorial para leitura e manuscrito nas margens.</li>
+            </ul>
+
+            <div class="gate-interactive-box">
+              <p class="gate-interactive-title">Teste de direção (clique para montar o DESIGN_SPEC):</p>
+              <div class="chip-row">
+                <button class="mood-chip" type="button" aria-pressed="true" data-spec="Papel #F2EBDD">Papel #F2EBDD</button>
+                <button class="mood-chip" type="button" aria-pressed="true" data-spec="Grafite #292821">Grafite #292821</button>
+                <button class="mood-chip" type="button" aria-pressed="true" data-spec="Rasura #A64B3C">Rasura #A64B3C</button>
+                <button class="mood-chip" type="button" aria-pressed="false" data-spec="Serif Editorial">Serif Editorial</button>
+              </div>
+              <div id="spec-preview" class="spec-preview" aria-live="polite">
+                DESIGN_SPEC: Papel #F2EBDD + Grafite #292821 + Rasura #A64B3C
+              </div>
+            </div>
+          </div>
+
+          <!-- Gate 2 -->
+          <div id="panel-g2" class="gate-panel" role="tabpanel" aria-labelledby="tab-g2" hidden>
+            <span class="gate-badge">Gate 2 · STOP AND WAIT</span>
+            <h3 class="gate-heading"><span class="hand-underline">Caça real de referências</span></h3>
+            <p>Antes de pedir código, você traz 2 ou 3 referências visuais concretas de acervos reais:</p>
+            <ul class="gate-list">
+              <li><strong>Mood e texturas físicas:</strong> <code>are.na</code>, <code>cosmos.so</code>, <code>savee.it</code>.</li>
+              <li><strong>Tipografia e personalidade:</strong> <code>godly.website</code>, <code>siteinspire.com</code>, <code>curated.design</code>.</li>
+              <li><strong>Fluxos e UX limpa:</strong> <code>mobbin.com</code>, <code>refero.design</code>.</li>
+              <li><strong>Micro-interações de desenho:</strong> <code>tympanus.net/codrops</code>, <code>lottiefiles.com</code>.</li>
+            </ul>
+            <p>O agente extrai tokens exatos (cores hex, ritmo de espaçamento, curvas de easing) para o <code>DESIGN_SPEC</code>.</p>
+          </div>
+
+          <!-- Gate 3 -->
+          <div id="panel-g3" class="gate-panel" role="tabpanel" aria-labelledby="tab-g3" hidden>
+            <span class="gate-badge">Gate 3 · STOP AND CONFIRM</span>
+            <h3 class="gate-heading"><span class="hand-underline">Esboço na mão</span> ou mapa ASCII</h3>
+            <p>Você envia a foto de um rascunho feito no caderno ou aprova um mapa estrutural em ASCII adaptado ao Gate 1 e 2.</p>
+            <ul class="gate-list">
+              <li>Nenhuma pasta <code>src/</code> ou arquivo HTML nasce antes do seu "OK".</li>
+              <li>Define tensão de layout, proporção de margens e hierarquia real do conteúdo.</li>
+              <li>Evita seções vazias ou preenchimento de template que ninguém pediu.</li>
+            </ul>
+          </div>
+
+          <!-- Gate 4 -->
+          <div id="panel-g4" class="gate-panel" role="tabpanel" aria-labelledby="tab-g4" hidden>
+            <span class="gate-badge">Gate 4 · BESPOKE ASSETS</span>
+            <h3 class="gate-heading"><span class="hand-underline">Aquarela p5.brush</span> e Lottie vivo</h3>
+            <p>Quando o projeto pede arte orgânica ou movimento vetorial, ícones genéricos ficam de fora:</p>
+            <ul class="gate-list">
+              <li><strong>Arte orgânica e papel:</strong> invoca <code>watercolor-obj</code> ou <code>watercolor-obj-p5</code> (<code>morikyl/skills</code>).</li>
+              <li><strong>Animação vetorial:</strong> usa <code>@lottiefiles/creator-mcp</code> para gerar e editar Lottie JSON em tempo real.</li>
+              <li><strong>Nanquim autoral:</strong> ilustrações em traço irregular com personalidade própria.</li>
+            </ul>
+          </div>
+
+          <!-- Gate 5 -->
+          <div id="panel-g5" class="gate-panel" role="tabpanel" aria-labelledby="tab-g5" hidden>
+            <span class="gate-badge">Gate 5 · ANTI-SLOP AUDIT</span>
+            <h3 class="gate-heading"><span class="hand-underline">Iteração intencional</span> e rasura</h3>
+            <p>O primeiro rascunho nunca é o final. O agente executa duas checagens explícitas após renderizar:</p>
+            <ul class="gate-list">
+              <li><strong>Tipografia e movimento:</strong> contraste WCAG AA, easing não-linear e foco visível no teclado.</li>
+              <li><strong>Auditoria Anti-Slop:</strong> risca gradientes roxos genéricos, grids de cards idênticos, estatísticas inventadas e botões mortos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="mascot-stage" aria-label="Reação do mascote Lápis">
+          <div id="stage-mascot" class="vignette-frame"></div>
+          <p class="mascot-speech" data-mascot-speech>"Calma. Antes do primeiro div, qual é a temperatura desse papel?"</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Comparativo Rasurado -->
+    <section id="comparativo" class="section-block" aria-labelledby="comparativo-titulo">
+      <div class="section-header">
+        <h2 id="comparativo-titulo" class="section-title">O que a skill risca do mapa</h2>
+        <span class="section-meta">clique para riscar o modelo genérico</span>
+      </div>
+
+      <div class="compare-grid">
+        <article id="slop-card" class="compare-card compare-card--slop">
+          <div>
+            <div class="slop-mockup">
+              <span class="slop-pill">AI Powered · 99.9% Uptime</span>
+              <h3>Next-Gen Seamless Platform</h3>
+              <p>Revolutionary cutting-edge solution with 10K+ active users worldwide.</p>
+              <svg class="slop-strike-overlay" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="12" y1="12" x2="388" y2="188" stroke="#A64B3C" stroke-width="6" stroke-linecap="round"/>
+                <line x1="388" y1="16" x2="14" y2="184" stroke="#A64B3C" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <p class="hand-note hand-note--red" style="margin-top: 0.75rem;">
+              gradiente roxo + números inventados + borda padrão
+            </p>
+          </div>
+          <div>
+            <button id="strike-slop-btn" class="btn-ink" type="button" aria-pressed="false">Rasurar AI Slop</button>
+          </div>
+        </article>
+
+        <article class="compare-card">
+          <div class="craft-mockup">
+            <span class="gate-badge">Caderno de Pesquisa · Craft</span>
+            <h3>Materialidade, leitura e intenção</h3>
+            <p>Fundo papel creme <code>#F2EBDD</code>, tipografia serifada para respiro editorial, manuscrito apenas nas margens e zero elementos sem função real.</p>
+          </div>
+          <p class="hand-note" style="margin: 0;">
+            contraste AA garantido + foco visível + sem ruído visual.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Instalação e Extras -->
+    <section id="instalacao" class="section-block" aria-labelledby="instalacao-titulo">
+      <div class="section-header">
+        <h2 id="instalacao-titulo" class="section-title">Instalação na sua máquina</h2>
+        <span class="section-meta">zero gasto de token para plugar</span>
+      </div>
+
+      <div class="install-grid">
+        <div class="install-card">
+          <h3>1. Instalar a skill + aquarela p5.brush</h3>
+          <p>Instale a <code>human-craft-frontend</code> e os extras orgânicos do <code>morikyl/skills</code> direto no terminal:</p>
+          <pre id="cmd-extras" class="code-block">npx skills add santanaluiz181-cell/human-craft-frontend
+npx skills@latest add morikyl/skills --skill watercolor-obj watercolor-obj-p5</pre>
+          <div>
+            <button class="btn-outline" type="button" data-copy-target="cmd-extras">Copiar comandos</button>
+          </div>
+        </div>
+
+        <div class="install-card">
+          <h3>2. Plugar LottieFiles Creator no mcp_config.json</h3>
+          <p>Adicione o servidor MCP abaixo no seu <code>mcp_config.json</code> do Antigravity para gerar vetores animados ao vivo:</p>
+          <pre id="cmd-mcp" class="code-block">{
+  "mcpServers": {
+    "lottiefiles-creator": {
+      "command": "npx",
+      "args": ["-y", "@lottiefiles/creator-mcp@latest"]
+    }
+  }
+}</pre>
+          <div>
+            <button class="btn-outline" type="button" data-copy-target="cmd-mcp">Copiar JSON</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="notebook-shell site-footer">
+    <span>pág. 01 · human-craft-frontend · Licença MIT</span>
+    <div class="footer-links">
+      <a href="https://github.com/santanaluiz181-cell/human-craft-frontend/blob/main/SKILL.md" target="_blank" rel="noopener noreferrer">SKILL.md</a>
+      <a href="https://github.com/santanaluiz181-cell/human-craft-frontend/blob/main/DESIGN.md" target="_blank" rel="noopener noreferrer">DESIGN.md</a>
+      <a href="https://github.com/santanaluiz181-cell/human-craft-frontend" target="_blank" rel="noopener noreferrer">Repositório GitHub</a>
+    </div>
+  </footer>
+
+  <script src="js/pencil-mascot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

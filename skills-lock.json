@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "skills": {
+    "watercolor-obj": {
+      "source": "morikyl/skills",
+      "sourceType": "github",
+      "skillPath": "watercolor-skills/watercolor-obj/SKILL.md",
+      "computedHash": "cbce7742503a807a03248021f222c8c4264f03d661db32bf1f50040c193bd096"
+    },
+    "watercolor-obj-p5": {
+      "source": "morikyl/skills",
+      "sourceType": "github",
+      "skillPath": "watercolor-skills/watercolor-obj-p5/SKILL.md",
+      "computedHash": "347e3e798b43e37bd98b80e02c597c47cbd4b7933cbeefe297b4599f4bca38a0"
+    }
+  }
+}

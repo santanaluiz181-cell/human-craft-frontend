@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240" role="img" aria-label="Mascote Lápis da skill human-craft-frontend desenhado a nanquim">
+  <!-- Fundo papel creme -->
+  <circle cx="120" cy="120" r="106" fill="#F2EBDD" />
+  <!-- Hachura de sombra no fundo da vinheta (estilo gravura) -->
+  <path d="M44 176 Q120 198 196 176" fill="none" stroke="#D8CBB3" stroke-width="2" stroke-linecap="round"/>
+  <path d="M58 184 Q120 202 182 184" fill="none" stroke="#292821" stroke-width="1.1" stroke-dasharray="3 4" opacity="0.5"/>
+  <path d="M75 192 Q120 205 165 192" fill="none" stroke="#292821" stroke-width="1" stroke-dasharray="2 5" opacity="0.45"/>
+
+  <!-- Anel irregular de nanquim -->
+  <path d="M120 14 C178 13 224 58 225 119 C226 179 180 226 119 225 C59 224 14 179 15 120 C16 59 61 15 120 14 Z" fill="none" stroke="#292821" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M123 18 C176 19 220 62 221 118 C222 175 178 220 121 221" fill="none" stroke="#292821" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- Pontos de pensamento / rabisco -->
+  <path d="M168 52 C175 43 185 45 182 54 C179 62 171 62 172 68" fill="none" stroke="#A64B3C" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="172" cy="75" r="2" fill="#A64B3C"/>
+
+  <!-- Corpo do Lápis (inclinado pensando) -->
+  <g transform="translate(120, 126) rotate(-8)">
+    <!-- Borracha gasta -->
+    <path d="M-16 -72 C-16 -84 16 -84 16 -72 L16 -60 L-16 -60 Z" fill="#A64B3C" stroke="#292821" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M-11 -76 Q0 -79 10 -74" fill="none" stroke="#F2EBDD" stroke-width="1.3" opacity="0.5" stroke-linecap="round"/>
+
+    <!-- Virola metálica com hachura -->
+    <rect x="-16" y="-60" width="32" height="14" fill="#D8CBB3" stroke="#292821" stroke-width="2.4" stroke-linejoin="round"/>
+    <line x1="-16" y1="-55" x2="16" y2="-55" stroke="#292821" stroke-width="1.2"/>
+    <line x1="-16" y1="-50" x2="16" y2="-50" stroke="#292821" stroke-width="1.2"/>
+    <path d="M-10 -60 L-10 -46 M0 -60 L0 -46 M10 -60 L10 -46" stroke="#292821" stroke-width="1" opacity="0.5"/>
+
+    <!-- Corpo sextavado verde-oliva -->
+    <path d="M-16 -46 L16 -46 L17 42 L-17 42 Z" fill="#68765B" stroke="#292821" stroke-width="2.6" stroke-linejoin="round"/>
+    <!-- Linhas das faces do lápis -->
+    <line x1="-6" y1="-46" x2="-6" y2="42" stroke="#292821" stroke-width="1.4" opacity="0.65"/>
+    <line x1="6" y1="-46" x2="6" y2="42" stroke="#292821" stroke-width="1.4" opacity="0.65"/>
+    <!-- Hachura lateral esquerda (sombra nanquim) -->
+    <path d="M-15 -38 L-9 -35 M-15 -30 L-9 -27 M-15 -22 L-9 -19 M-15 18 L-9 21 M-15 26 L-9 29 M-15 34 L-9 37" stroke="#292821" stroke-width="1.1" opacity="0.55" stroke-linecap="round"/>
+
+    <!-- Rosto expressivo (olhos cartoon + sobrancelha pensativa) -->
+    <ellipse cx="-6" cy="-16" rx="4.5" ry="5.5" fill="#F2EBDD" stroke="#292821" stroke-width="2"/>
+    <ellipse cx="7" cy="-16" rx="4.5" ry="5.5" fill="#F2EBDD" stroke="#292821" stroke-width="2"/>
+    <circle cx="-4.5" cy="-17.5" r="2" fill="#292821"/>
+    <circle cx="8.5" cy="-17.5" r="2" fill="#292821"/>
+    <!-- Sobrancelhas -->
+    <path d="M-12 -25 Q-6 -28 -1 -24" fill="none" stroke="#292821" stroke-width="2" stroke-linecap="round"/>
+    <path d="M2 -27 Q8 -31 13 -26" fill="none" stroke="#292821" stroke-width="2" stroke-linecap="round"/>
+    <!-- Boca torta pensando -->
+    <path d="M-5 -4 Q1 -2 6 -6" fill="none" stroke="#292821" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Braços de nanquim -->
+    <!-- Braço esquerdo apoiando o queixo -->
+    <path d="M-16 -2 C-30 6 -28 18 -10 10" fill="none" stroke="#292821" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Braço direito na cintura -->
+    <path d="M16 0 C28 8 28 22 17 26" fill="none" stroke="#292821" stroke-width="2.4" stroke-linecap="round"/>
+
+    <!-- Cone de madeira apontado -->
+    <path d="M-17 42 Q-9 39 0 43 Q9 39 17 42 L0 80 Z" fill="#D8CBB3" stroke="#292821" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M-8 43 L-2 64 M4 43 L1 62" stroke="#292821" stroke-width="1" opacity="0.45"/>
+
+    <!-- Ponta de grafite -->
+    <path d="M-5.5 66 L5.5 66 L0 80 Z" fill="#292821" stroke="#292821" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Rabisco na base onde a ponta encosta -->
+  <path d="M88 202 Q108 197 125 203 T156 199" fill="none" stroke="#292821" stroke-width="1.8" stroke-linecap="round"/>
+</svg>
